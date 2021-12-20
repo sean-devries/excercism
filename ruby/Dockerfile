@@ -1,4 +1,4 @@
-FROM elixir:3.0-alpine
+FROM ruby:3.0-alpine
 
 RUN wget https://github.com/exercism/cli/releases/download/v3.0.13/exercism-3.0.13-linux-x86_64.tar.gz && \
     tar xzf exercism-3.0.13-linux-x86_64.tar.gz && \
@@ -6,7 +6,7 @@ RUN wget https://github.com/exercism/cli/releases/download/v3.0.13/exercism-3.0.
 
 ARG EXERCISM_TOKEN
 
-RUN mkdir -p /workspace/elixir && \
+RUN mkdir -p /workspace/ruby && \
     exercism configure --token=$EXERCISM_TOKEN --workspace=\workspace
 
-WORKDIR /workspace/elixir
+WORKDIR /workspace/ruby
